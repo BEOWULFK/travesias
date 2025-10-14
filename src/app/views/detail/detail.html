@@ -1,0 +1,160 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid" *ngIf="lugar">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" (click)="goBack()">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="#">Sitios emblemáticos</a></li>
+        <li class="breadcrumb-item active">{{ lugar.nombre }}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-image">
+      <img [src]="lugar.imagen" [alt]="lugar.nombre" class="hero-img">
+      <div class="hero-overlay">
+        <h1 class="hero-title">{{ lugar.nombre }}</h1>
+        <p class="hero-description">{{ lugar.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+          <div class="gallery-main">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="gallery-main-img">
+            <div class="gallery-nav">
+              <button class="gallery-btn prev-btn">‹</button>
+              <button class="gallery-btn next-btn">›</button>
+            </div>
+          </div>
+          <div class="gallery-thumbnails">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="thumbnail active">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="thumbnail">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="thumbnail">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="thumbnail">
+            <img [src]="lugar.imagen" [alt]="lugar.nombre" class="thumbnail">
+          </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="content-section">
+          <h2>Descripción</h2>
+          <p>{{ lugar.descripcion }}</p>
+          <p>Este lugar emblemático de Nariño ofrece una experiencia única que combina la belleza natural con la riqueza cultural de la región. Es un destino imperdible para quienes buscan descubrir los tesoros ocultos del sur de Colombia.</p>
+        </div>
+
+        <!-- Location Section -->
+        <div class="content-section">
+          <h2>Ubicación</h2>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Mapa de {{ lugar.ubicacion }}</p>
+            </div>
+          </div>
+          <div class="location-details">
+            <div class="detail-item">
+              <i class="fas fa-dollar-sign"></i>
+              <span>Entrada gratuita</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ lugar.ubicacion }}</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-calendar"></i>
+              <span>Abierto todo el año</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nearby Accommodation -->
+        <div class="content-section">
+          <h2>Alojamiento cercano</h2>
+          <ul class="accommodation-list">
+            <li>Hotel {{ lugar.nombre }}</li>
+            <li>Hostal {{ lugar.ubicacion }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <!-- Practical Information -->
+          <div class="sidebar-section">
+            <h3>Información práctica</h3>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <span>8:00 - 18:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Mejor temporada: Junio a noviembre</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-heart"></i>
+              <span>Festival de {{ lugar.nombre }}</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-arrow-down"></i>
+              <span>Dificultad: Baja</span>
+            </div>
+          </div>
+
+          <!-- Tips Section -->
+          <div class="sidebar-section">
+            <h3>Consejos y tips</h3>
+            <ul class="tips-list">
+              <li>Llevar ropa cómoda y abrigada</li>
+              <li>Visitar en horas de la mañana</li>
+              <li>Llevar cámara fotográfica</li>
+              <li>Reservar con anticipación</li>
+            </ul>
+          </div>
+
+          <!-- Events Section -->
+          <div class="sidebar-section">
+            <h3>Eventos y actividades</h3>
+            <div class="event-item">
+              <i class="fas fa-calendar"></i>
+              <span>Festival de {{ lugar.nombre }} - 28 de septiembre</span>
+            </div>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="sidebar-section">
+            <h3>Comentarios</h3>
+            <textarea class="comment-input" placeholder="Escribe un comentario..."></textarea>
+            <button class="btn btn-primary">Enviar</button>
+          </div>
+
+          <!-- Related Events -->
+          <div class="sidebar-section">
+            <h3>Eventos relacionados</h3>
+            <div class="related-events">
+              <div class="related-event" *ngFor="let relatedLugar of lugares.slice(0, 2)">
+                <img [src]="relatedLugar.imagen" [alt]="relatedLugar.nombre" class="related-img">
+                <h4>{{ relatedLugar.nombre }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!lugar" class="container text-center py-5">
+  <h2>Lugar no encontrado</h2>
+  <button class="btn btn-primary" (click)="goBack()">Volver al inicio</button>
+</div>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Volcán Cumbal",
+    "imagen": "cocha.jpg",
+    "descripcion": "Volcán activo ubicado en el departamento de Nariño, Colombia. Con una altura de 4,764 metros sobre el nivel del mar, es uno de los volcanes más altos del país.",
+    "tipo": "Volcán",
+    "ubicacion": "Cumbal, Nariño"
+  },
+  {
+    "id": 2,
+    "nombre": "Santuario de Las Lajas",
+    "imagen": "lajas.jpg",
+    "descripcion": "Basílica de estilo neogótico construida en el cañón del río Guáitara. Es uno de los santuarios más importantes de Colombia y un destino de peregrinación.",
+    "tipo": "Religioso",
+    "ubicacion": "Ipiales, Nariño"
+  },
+  {
+    "id": 3,
+    "nombre": "Laguna de la Cocha",
+    "imagen": "cocha.jpg",
+    "descripcion": "Hermosa laguna de origen glaciar ubicada a 2,800 metros sobre el nivel del mar. Es un importante ecosistema acuático y destino turístico.",
+    "tipo": "Natural",
+    "ubicacion": "El Encano, Nariño"
+  },
+  {
+    "id": 4,
+    "nombre": "Volcán Galeras",
+    "imagen": "galeras.jpg",
+    "descripcion": "Volcán activo ubicado cerca de Pasto, Nariño. Es uno de los volcanes más monitoreados de Colombia debido a su actividad constante.",
+    "tipo": "Volcán",
+    "ubicacion": "Pasto, Nariño"
+  },
+  {
+    "id": 5,
+    "nombre": "Santuario de Las Lajas",
+    "imagen": "lajas.jpg",
+    "descripcion": "Basílica de estilo neogótico construida en el cañón del río Guáitara. Es uno de los santuarios más importantes de Colombia y un destino de peregrinación.",
+    "tipo": "Religioso",
+    "ubicacion": "Ipiales, Nariño"
+  },
+  {
+    "id": 6,
+    "nombre": "Laguna de la Cocha",
+    "imagen": "cocha.jpg",
+    "descripcion": "Hermosa laguna de origen glaciar ubicada a 2,800 metros sobre el nivel del mar. Es un importante ecosistema acuático y destino turístico.",
+    "tipo": "Natural",
+    "ubicacion": "El Encano, Nariño"
+  }
+]

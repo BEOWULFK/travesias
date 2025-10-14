@@ -1,1 +1,21 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <!-- Welcome Section -->
+  <div class="welcome-container">
+    <h1 class="welcome-title">Bienvenidos a Nariño</h1>
+    <p class="welcome-description">
+      Descubre la belleza natural, cultural e histórica del sur de Colombia. Nariño ofrece paisajes
+      impresionantes, cascadas, volcanes, y sitios llenos de tradición.
+    </p>
+  </div>
+
+  <!-- Image Grid -->
+  <div class="image-grid">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let lugar of lugares">
+        <app-card [lugar]="lugar"></app-card>
+      </div>
+    </div>
+  </div>
+</div>

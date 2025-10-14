@@ -1,0 +1,43 @@
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1rem;
+  background-color: white;
+}
+
+.card-title {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 200px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+}

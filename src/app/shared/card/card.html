@@ -1,1 +1,6 @@
-<p>card works!</p>
+<div class="card h-100 border-0 shadow-sm" (click)="onCardClick()">
+  <img [src]="lugar.imagen" [alt]="lugar.nombre" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{ lugar.nombre }}</h5>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" (click)="goBack()">Inicio</a></li>
+        <li class="breadcrumb-item active">Iniciar Sesión</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <div class="login-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <div class="login-card">
+            <div class="login-header">
+              <h1 class="login-title">Iniciar Sesión</h1>
+              <p class="login-subtitle">Accede a tu cuenta para descubrir más sobre Nariño</p>
+            </div>
+
+            <form (ngSubmit)="onSubmit()" class="login-form">
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="tu@email.com"
+                    required
+                  >
+                </div>
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-group">
+                <label for="password" class="form-label">Contraseña</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    [(ngModel)]="password"
+                    name="password"
+                    placeholder="Tu contraseña"
+                    required
+                  >
+                </div>
+              </div>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="errorMessage">
+                <i class="fas fa-exclamation-triangle"></i>
+                {{ errorMessage }}
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-login"
+                [disabled]="isLoading"
+              >
+                <span *ngIf="!isLoading">
+                  <i class="fas fa-sign-in-alt"></i>
+                  Iniciar Sesión
+                </span>
+                <span *ngIf="isLoading">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  Iniciando sesión...
+                </span>
+              </button>
+            </form>
+
+            <!-- Demo Info -->
+            <div class="demo-info">
+              <div class="demo-card">
+                <h4><i class="fas fa-info-circle"></i> Información de Demo</h4>
+                <p>Este es un sistema de autenticación simulado. Puedes usar cualquier email y contraseña para iniciar sesión.</p>
+                <div class="demo-credentials">
+                  <strong>Ejemplo:</strong>
+                  <br>Email: usuario@ejemplo.com
+                  <br>Contraseña: cualquier_contraseña
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Links -->
+            <div class="login-footer">
+              <p>¿No tienes cuenta? <a href="#" class="register-link">Regístrate aquí</a></p>
+              <p><a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
